@@ -1,0 +1,193 @@
+{
+  "protocol": "TFA confirmation on DS1",
+  "window_before": 65,
+  "window_after": 110,
+  "segment_length": 175,
+  "train_subset_seed": 20260810,
+  "train_class_limits": {
+    "N": 2000,
+    "S": null,
+    "V": 2000,
+    "F": null
+  },
+  "validation": "full DS1 VAL",
+  "model_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "early_stopping_metric": "Macro F1",
+  "selection_metrics": [
+    "Rare_Macro_SF",
+    "Macro_F1",
+    "Min_Rare_F1"
+  ],
+  "candidate_ids_requested": [
+    "STFT_T29_BALANCED",
+    "CWT_T42_RARE",
+    "CWT_T39_BALANCED",
+    "DWT_T7_RARE",
+    "DWT_T39_BALANCED",
+    "SWT_T25_RARE",
+    "SWT_T0_BALANCED"
+  ],
+  "completed_runs": 70,
+  "expected_runs": 70,
+  "all_requested_runs_complete": true,
+  "elapsed_hours_this_session": 1.0860121650165981,
+  "pareto_candidate_ids": [
+    "CWT_T39_BALANCED",
+    "SWT_T0_BALANCED"
+  ],
+  "ds2_used": false,
+  "candidates": {
+    "STFT_T29_BALANCED": {
+      "method": "STFT",
+      "source_trial": 29,
+      "role": "rare_and_balanced",
+      "screen_Rare_Macro_SF": 0.23881021469905228,
+      "screen_Macro_F1": 0.42099432963060684,
+      "screen_Min_Rare_F1": 0.18778610070744903,
+      "config": {
+        "method": "STFT",
+        "image_size": [
+          128,
+          128
+        ],
+        "norm_type": "sqrt",
+        "clip_pct": 5,
+        "nperseg": 64,
+        "window": "hamming",
+        "noverlap_pct": 0.25,
+        "nfft": 64
+      }
+    },
+    "CWT_T42_RARE": {
+      "method": "CWT",
+      "source_trial": 42,
+      "role": "rare_priority",
+      "screen_Rare_Macro_SF": 0.31153400771338574,
+      "screen_Macro_F1": 0.4648193293926326,
+      "screen_Min_Rare_F1": 0.012345679012345678,
+      "config": {
+        "method": "CWT",
+        "image_size": [
+          192,
+          192
+        ],
+        "norm_type": "linear",
+        "clip_pct": 2,
+        "wavelet": "morl",
+        "scale_min": 4.0,
+        "scale_max": 20.0,
+        "scale_type": "logarithmic",
+        "num_scales": 48
+      }
+    },
+    "CWT_T39_BALANCED": {
+      "method": "CWT",
+      "source_trial": 39,
+      "role": "balanced_min_rare",
+      "screen_Rare_Macro_SF": 0.1505142780230355,
+      "screen_Macro_F1": 0.4061768593370429,
+      "screen_Min_Rare_F1": 0.0791245791245791,
+      "config": {
+        "method": "CWT",
+        "image_size": [
+          128,
+          160
+        ],
+        "norm_type": "linear",
+        "clip_pct": 2,
+        "wavelet": "gaus8",
+        "scale_min": 2.0,
+        "scale_max": 130.0,
+        "scale_type": "logarithmic",
+        "num_scales": 80
+      }
+    },
+    "DWT_T7_RARE": {
+      "method": "DWT",
+      "source_trial": 7,
+      "role": "rare_priority",
+      "screen_Rare_Macro_SF": 0.21551660598717878,
+      "screen_Macro_F1": 0.4550311733279391,
+      "screen_Min_Rare_F1": 0.0,
+      "config": {
+        "method": "DWT",
+        "image_size": [
+          224,
+          160
+        ],
+        "norm_type": "linear",
+        "clip_pct": 5,
+        "wavelet": "bior3.5",
+        "level": 3
+      }
+    },
+    "DWT_T39_BALANCED": {
+      "method": "DWT",
+      "source_trial": 39,
+      "role": "balanced_min_rare",
+      "screen_Rare_Macro_SF": 0.1500005822545536,
+      "screen_Macro_F1": 0.4088544109068333,
+      "screen_Min_Rare_F1": 0.0957207207207207,
+      "config": {
+        "method": "DWT",
+        "image_size": [
+          160,
+          256
+        ],
+        "norm_type": "linear",
+        "clip_pct": 3,
+        "wavelet": "sym5",
+        "level": 3
+      }
+    },
+    "SWT_T25_RARE": {
+      "method": "SWT",
+      "source_trial": 25,
+      "role": "rare_priority",
+      "screen_Rare_Macro_SF": 0.25019626167200637,
+      "screen_Macro_F1": 0.42194503180313775,
+      "screen_Min_Rare_F1": 0.09438867207829287,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          96,
+          128
+        ],
+        "norm_type": "linear",
+        "clip_pct": 1,
+        "wavelet": "sym5",
+        "level": 2
+      }
+    },
+    "SWT_T0_BALANCED": {
+      "method": "SWT",
+      "source_trial": 0,
+      "role": "balanced_pareto",
+      "screen_Rare_Macro_SF": 0.2139594081918428,
+      "screen_Macro_F1": 0.4415207464243522,
+      "screen_Min_Rare_F1": 0.18540051679586564,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          224,
+          192
+        ],
+        "norm_type": "linear",
+        "clip_pct": 3,
+        "wavelet": "sym4",
+        "level": 4
+      }
+    }
+  }
+}
