@@ -1,0 +1,74 @@
+{
+  "method": "STFT",
+  "study_name": "tfa_stft_65x110_raremacro_macro_v2",
+  "objectives": [
+    "maximize mean validation Rare-Macro F1(S,F)",
+    "maximize mean validation Macro F1(N,S,V,F)"
+  ],
+  "run_seeds": [
+    42,
+    43,
+    44
+  ],
+  "ds2_used": false,
+  "pareto_trials": [
+    {
+      "method": "STFT",
+      "trial_number": 29,
+      "Rare_Macro_SF_mean": 0.23881021469905228,
+      "Rare_Macro_SF_std": 0.07568498655434146,
+      "Macro_F1_mean": 0.42099432963060684,
+      "Macro_F1_std": 0.039711860698516406,
+      "Min_Rare_F1_mean": 0.18778610070744903,
+      "Min_Rare_F1_std": 0.07056467397911112,
+      "F1_N": 0.5827276641589307,
+      "F1_S": 0.24914195091962602,
+      "F1_V": 0.6236292249653922,
+      "F1_F": 0.2284784784784785,
+      "Recall_S": 0.15968586387434555,
+      "Recall_F": 0.2222222222222222,
+      "config": {
+        "method": "STFT",
+        "image_size": [
+          128,
+          128
+        ],
+        "norm_type": "sqrt",
+        "clip_pct": 5,
+        "nperseg": 64,
+        "window": "hamming",
+        "noverlap_pct": 0.25,
+        "nfft": 64
+      }
+    },
+    {
+      "method": "STFT",
+      "trial_number": 44,
+      "Rare_Macro_SF_mean": 0.23881021469905228,
+      "Rare_Macro_SF_std": 0.07568498655434146,
+      "Macro_F1_mean": 0.42099432963060684,
+      "Macro_F1_std": 0.039711860698516406,
+      "Min_Rare_F1_mean": 0.18778610070744903,
+      "Min_Rare_F1_std": 0.07056467397911112,
+      "F1_N": 0.5827276641589307,
+      "F1_S": 0.24914195091962602,
+      "F1_V": 0.6236292249653922,
+      "F1_F": 0.2284784784784785,
+      "Recall_S": 0.15968586387434555,
+      "Recall_F": 0.2222222222222222,
+      "config": {
+        "method": "STFT",
+        "image_size": [
+          128,
+          128
+        ],
+        "norm_type": "sqrt",
+        "clip_pct": 5,
+        "nperseg": 64,
+        "window": "hamming",
+        "noverlap_pct": 0.25,
+        "nfft": 64
+      }
+    }
+  ]
+}

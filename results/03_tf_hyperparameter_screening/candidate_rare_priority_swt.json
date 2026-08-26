@@ -1,0 +1,35 @@
+{
+  "method": "SWT",
+  "trial_number": 25,
+  "Rare_Macro_SF_mean": 0.25019626167200637,
+  "Rare_Macro_SF_std": 0.030053852423108537,
+  "Macro_F1_mean": 0.42194503180313775,
+  "Macro_F1_std": 0.01437440090296191,
+  "Min_Rare_F1_mean": 0.09438867207829287,
+  "Min_Rare_F1_std": 0.04013108963310595,
+  "F1_N": 0.4629156898359658,
+  "F1_S": 0.40600385126572,
+  "F1_V": 0.7244719140325726,
+  "F1_F": 0.09438867207829287,
+  "Recall_S": 0.32024432809773123,
+  "Recall_F": 0.40740740740740744,
+  "config": {
+    "method": "SWT",
+    "image_size": [
+      96,
+      128
+    ],
+    "norm_type": "linear",
+    "clip_pct": 1,
+    "wavelet": "sym5",
+    "level": 2
+  },
+  "selection_rule": "highest Rare-Macro F1 on Pareto front; Macro F1 is co-objective",
+  "requires_confirmation": true,
+  "run_seeds": [
+    42,
+    43,
+    44
+  ],
+  "ds2_used": false
+}

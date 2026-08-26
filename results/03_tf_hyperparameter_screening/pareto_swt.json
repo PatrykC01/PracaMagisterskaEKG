@@ -1,0 +1,124 @@
+{
+  "method": "SWT",
+  "study_name": "tfa_swt_65x110_raremacro_macro_v2",
+  "objectives": [
+    "maximize mean validation Rare-Macro F1(S,F)",
+    "maximize mean validation Macro F1(N,S,V,F)"
+  ],
+  "run_seeds": [
+    42,
+    43,
+    44
+  ],
+  "ds2_used": false,
+  "pareto_trials": [
+    {
+      "method": "SWT",
+      "trial_number": 25,
+      "Rare_Macro_SF_mean": 0.25019626167200637,
+      "Rare_Macro_SF_std": 0.030053852423108537,
+      "Macro_F1_mean": 0.42194503180313775,
+      "Macro_F1_std": 0.01437440090296191,
+      "Min_Rare_F1_mean": 0.09438867207829287,
+      "Min_Rare_F1_std": 0.04013108963310595,
+      "F1_N": 0.4629156898359658,
+      "F1_S": 0.40600385126572,
+      "F1_V": 0.7244719140325726,
+      "F1_F": 0.09438867207829287,
+      "Recall_S": 0.32024432809773123,
+      "Recall_F": 0.40740740740740744,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          96,
+          128
+        ],
+        "norm_type": "linear",
+        "clip_pct": 1,
+        "wavelet": "sym5",
+        "level": 2
+      }
+    },
+    {
+      "method": "SWT",
+      "trial_number": 16,
+      "Rare_Macro_SF_mean": 0.21985350359303635,
+      "Rare_Macro_SF_std": 0.05656493327112071,
+      "Macro_F1_mean": 0.4344319177011075,
+      "Macro_F1_std": 0.04216028497772883,
+      "Min_Rare_F1_mean": 0.12679113001693645,
+      "Min_Rare_F1_std": 0.08569786822001364,
+      "F1_N": 0.5776721216537699,
+      "F1_S": 0.3129158771691362,
+      "F1_V": 0.7203485419645873,
+      "F1_F": 0.12679113001693645,
+      "Recall_S": 0.20157068062827224,
+      "Recall_F": 0.2037037037037037,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          224,
+          256
+        ],
+        "norm_type": "linear",
+        "clip_pct": 1,
+        "wavelet": "db4",
+        "level": 3
+      }
+    },
+    {
+      "method": "SWT",
+      "trial_number": 35,
+      "Rare_Macro_SF_mean": 0.21985350359303635,
+      "Rare_Macro_SF_std": 0.05656493327112071,
+      "Macro_F1_mean": 0.4344319177011075,
+      "Macro_F1_std": 0.04216028497772883,
+      "Min_Rare_F1_mean": 0.12679113001693645,
+      "Min_Rare_F1_std": 0.08569786822001364,
+      "F1_N": 0.5776721216537699,
+      "F1_S": 0.3129158771691362,
+      "F1_V": 0.7203485419645873,
+      "F1_F": 0.12679113001693645,
+      "Recall_S": 0.20157068062827224,
+      "Recall_F": 0.2037037037037037,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          224,
+          256
+        ],
+        "norm_type": "linear",
+        "clip_pct": 1,
+        "wavelet": "db4",
+        "level": 3
+      }
+    },
+    {
+      "method": "SWT",
+      "trial_number": 0,
+      "Rare_Macro_SF_mean": 0.2139594081918428,
+      "Rare_Macro_SF_std": 0.042274878524723405,
+      "Macro_F1_mean": 0.4415207464243522,
+      "Macro_F1_std": 0.030115522372859988,
+      "Min_Rare_F1_mean": 0.18540051679586564,
+      "Min_Rare_F1_std": 0.05756607798117366,
+      "F1_N": 0.6241049820737539,
+      "F1_S": 0.24251829958782,
+      "F1_V": 0.7140591872399691,
+      "F1_F": 0.18540051679586564,
+      "Recall_S": 0.14921465968586387,
+      "Recall_F": 0.16666666666666666,
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          224,
+          192
+        ],
+        "norm_type": "linear",
+        "clip_pct": 3,
+        "wavelet": "sym4",
+        "level": 4
+      }
+    }
+  ]
+}
