@@ -1,0 +1,207 @@
+{
+  "protocol": "locked final evaluation on DS2 after selection on DS1",
+  "final_test_stage": true,
+  "architecture_manifest_source": "/kaggle/input/datasets/patrykcwajnap4trykk/testarchitekturwyniki/architecture_confirmation_11_candidates_65x110/architecture_confirmation_manifest.json",
+  "architecture_manifest_protocol": "paired architecture confirmation on DS1",
+  "balancing_confirmation_manifest_source": "/kaggle/input/datasets/patryk01/balancing-confirmation/balancing_confirmation_manifest.json",
+  "balancing_confirmation_selected_source": "/kaggle/input/datasets/patryk01/balancing-confirmation/balancing_confirmation_selected.csv",
+  "balancing_confirmation_runs_source": "/kaggle/input/datasets/patryk01/balancing-confirmation/balancing_confirmation_runs.csv",
+  "balancing_confirmation_protocol": "paired balancing-method confirmation on full DS1 TRAIN and DS1 VAL",
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": {
+    "method": "STFT",
+    "image_size": [
+      128,
+      128
+    ],
+    "norm_type": "sqrt",
+    "clip_pct": 5,
+    "nperseg": 64,
+    "window": "hamming",
+    "noverlap_pct": 0.25,
+    "nfft": 64
+  },
+  "representations": [
+    "STFT_2D",
+    "RAW_1D"
+  ],
+  "architectures": {
+    "RAW_1D": {
+      "candidate_id": "BILSTM1D_T24_BOTH",
+      "model_id": "BILSTM1D",
+      "domain": "RAW_1D",
+      "trial_number": 24,
+      "roles": [
+        "balanced_minrare_all_unique",
+        "rare_priority"
+      ],
+      "n_parameters": 328228,
+      "params": {
+        "rr_dim": 32,
+        "head_dim": 128,
+        "dropout": 0.2,
+        "n_layers": 2,
+        "hidden_size": 96,
+        "lstm_dropout": 0.4,
+        "learning_rate": 0.0008375468251188166,
+        "weight_decay": 0.00019431587615520083
+      }
+    },
+    "STFT_2D": {
+      "candidate_id": "BILSTM2D_T7_BOTH",
+      "model_id": "BILSTM2D",
+      "domain": "STFT_2D",
+      "trial_number": 7,
+      "roles": [
+        "balanced_minrare_all_unique",
+        "rare_priority"
+      ],
+      "n_parameters": 318885,
+      "params": {
+        "rr_dim": 32,
+        "head_dim": 128,
+        "dropout": 0.4,
+        "n_layers": 1,
+        "input_projection": 128,
+        "hidden_size": 128,
+        "pooling": "attention",
+        "learning_rate": 0.0023942104033463168,
+        "weight_decay": 1.1605943819949519e-05
+      }
+    }
+  },
+  "final_seeds": [
+    7100,
+    7101,
+    7102,
+    7103,
+    7104,
+    7105,
+    7106,
+    7107,
+    7108,
+    7109
+  ],
+  "config_ids_by_representation": {
+    "STFT_2D": [
+      "BASELINE_CE",
+      "WGAN_GP_X5"
+    ],
+    "RAW_1D": [
+      "BASELINE_CE",
+      "FOCAL_A025_G3"
+    ]
+  },
+  "selected_config_by_representation": {
+    "STFT_2D": "WGAN_GP_X5",
+    "RAW_1D": "FOCAL_A025_G3"
+  },
+  "baseline_config": "BASELINE_CE",
+  "fixed_epochs": {
+    "STFT_2D|BASELINE_CE": 10,
+    "STFT_2D|WGAN_GP_X5": 10,
+    "RAW_1D|BASELINE_CE": 15,
+    "RAW_1D|FOCAL_A025_G3": 12
+  },
+  "fixed_epoch_rule": "rounded median best_epoch across the 10 DS1 confirmation seeds",
+  "method_configs": [
+    {
+      "config_id": "BASELINE_CE",
+      "family": "baseline",
+      "kind": "baseline"
+    },
+    {
+      "config_id": "FOCAL_A025_G3",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.25,
+      "gamma": 3.0
+    },
+    {
+      "config_id": "WGAN_GP_X5",
+      "family": "wgan_gp",
+      "kind": "wgan_gp",
+      "wgan_factor": 5
+    }
+  ],
+  "expected_runs": 40,
+  "completed_runs": 40,
+  "complete": true,
+  "data": {
+    "ds1_train_path": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_train.npz",
+    "ds1_val_path": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_val.npz",
+    "ds2_test_path": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_test.npz",
+    "full_ds1_n_samples": 51004,
+    "full_ds1_class_counts": {
+      "N": 45858,
+      "S": 944,
+      "V": 3788,
+      "F": 414
+    },
+    "ds2_n_samples": 49693,
+    "ds2_class_counts": {
+      "N": 44248,
+      "S": 1837,
+      "V": 3220,
+      "F": 388
+    }
+  },
+  "training_split": "DS1 TRAIN concatenated with DS1 VAL",
+  "test_split": "DS2 TEST",
+  "validation_during_final_training": false,
+  "early_stopping": false,
+  "checkpoint_selection_on_ds2": false,
+  "techniques_are_isolated": true,
+  "paired_by_seed": true,
+  "wgan_gp": {
+    "space": "standardized RAW signal generated only from full DS1",
+    "classes": [
+      "S",
+      "F"
+    ],
+    "class_specific_generators": true,
+    "generator": "1D convolutional WGAN-GP",
+    "epochs": 150,
+    "latent_dim": 128,
+    "critic_steps": 5,
+    "lambda_gp": 10.0,
+    "seed_base": 810000,
+    "fresh_pool_per_final_seed": true,
+    "max_quality_attempts": 3,
+    "rr_assignment": "RR of nearest real beat from the same class",
+    "quality_screen": "aligned Euclidean nearest-neighbour distance",
+    "quality_thresholds": {
+      "minimum_selected_acceptable_fraction": 0.99,
+      "selected_to_real_nn_ratio": [
+        0.25,
+        2.0
+      ],
+      "generated_self_to_real_nn_ratio": [
+        0.25,
+        2.0
+      ]
+    },
+    "train_only": true,
+    "combined_with_class_weights": false
+  },
+  "statistical_analysis": {
+    "confidence_intervals": "95% Student-t across seeds; describes training/data-generation stochasticity, not patient-sampling uncertainty",
+    "planned_comparisons": "DS1-selected pipeline versus its frozen baseline within each representation",
+    "test": "two-sided paired Wilcoxon by seed",
+    "multiplicity": "Holm correction across MinRare, RareMacro and Macro within each representation",
+    "alpha": 0.05
+  },
+  "model_checkpoints_saved": true,
+  "test_predictions_saved": true,
+  "requires_ds2": true,
+  "ds2_used": true,
+  "ds2_used_for_training": false,
+  "ds2_used_for_hyperparameter_selection": false,
+  "all_final_seed_results_reported": true,
+  "post_ds2_changes_forbidden": true,
+  "elapsed_hours_this_session": 1.8987176726924049
+}
