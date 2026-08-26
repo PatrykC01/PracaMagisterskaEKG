@@ -1,0 +1,133 @@
+{
+  "protocol": "controlled input-representation comparison on DS1",
+  "window_before": 65,
+  "window_after": 110,
+  "segment_length": 175,
+  "rr_features_used_by_every_representation": true,
+  "train_subset_seed": 20260810,
+  "train_class_limits": {
+    "N": 2000,
+    "S": null,
+    "V": 2000,
+    "F": null
+  },
+  "validation": "full DS1 VAL",
+  "model_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009
+  ],
+  "n_epochs": 30,
+  "patience": 8,
+  "early_stopping_metric": "Macro F1",
+  "selection_metrics": [
+    "Rare_Macro_SF",
+    "Macro_F1",
+    "Min_Rare_F1"
+  ],
+  "representations_requested": [
+    "RAW_1D_65x110",
+    "STFT_T29",
+    "CWT_T39",
+    "DWT_T7",
+    "SWT_T0"
+  ],
+  "completed_runs": 50,
+  "expected_runs": 50,
+  "all_requested_runs_complete": true,
+  "elapsed_hours_this_session": 0.9597911816173129,
+  "pareto_representation_ids": [
+    "STFT_T29",
+    "SWT_T0"
+  ],
+  "ds2_used": false,
+  "representations": {
+    "RAW_1D_65x110": {
+      "method": "RAW_1D",
+      "source_trial": null,
+      "role": "raw_window_winner",
+      "config": {
+        "method": "RAW_1D",
+        "window_before": 65,
+        "window_after": 110,
+        "segment_length": 175
+      }
+    },
+    "STFT_T29": {
+      "method": "STFT",
+      "source_trial": 29,
+      "role": "confirmed_method_winner",
+      "config": {
+        "method": "STFT",
+        "image_size": [
+          128,
+          128
+        ],
+        "norm_type": "sqrt",
+        "clip_pct": 5,
+        "nperseg": 64,
+        "window": "hamming",
+        "noverlap_pct": 0.25,
+        "nfft": 64
+      }
+    },
+    "CWT_T39": {
+      "method": "CWT",
+      "source_trial": 39,
+      "role": "confirmed_method_winner",
+      "config": {
+        "method": "CWT",
+        "image_size": [
+          128,
+          160
+        ],
+        "norm_type": "linear",
+        "clip_pct": 2,
+        "wavelet": "gaus8",
+        "scale_min": 2.0,
+        "scale_max": 130.0,
+        "scale_type": "logarithmic",
+        "num_scales": 80
+      }
+    },
+    "DWT_T7": {
+      "method": "DWT",
+      "source_trial": 7,
+      "role": "method_winner_by_primary_objective",
+      "config": {
+        "method": "DWT",
+        "image_size": [
+          224,
+          160
+        ],
+        "norm_type": "linear",
+        "clip_pct": 5,
+        "wavelet": "bior3.5",
+        "level": 3
+      }
+    },
+    "SWT_T0": {
+      "method": "SWT",
+      "source_trial": 0,
+      "role": "confirmed_method_winner",
+      "config": {
+        "method": "SWT",
+        "image_size": [
+          224,
+          192
+        ],
+        "norm_type": "linear",
+        "clip_pct": 3,
+        "wavelet": "sym4",
+        "level": 4
+      }
+    }
+  }
+}
