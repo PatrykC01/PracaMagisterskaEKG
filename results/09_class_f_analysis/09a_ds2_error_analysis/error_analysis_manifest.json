@@ -1,0 +1,38 @@
+{
+  "protocol": "post-hoc per-record error analysis of locked DS2 predictions",
+  "analysis_only": true,
+  "models_trained": false,
+  "model_selection_performed": false,
+  "threshold_selection_performed": false,
+  "ds2_result_remains_locked": true,
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "raw_mitdb_dir": "/kaggle/input/datasets/patryk01/mitdbdatabase/mitdb",
+  "dataset_paths": {
+    "DS1_TRAIN": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_train.npz",
+    "DS1_VAL": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_val.npz",
+    "DS2_TEST": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_test.npz"
+  },
+  "final_results_dir": "/kaggle/input/datasets/patryk01/finalds2testresults/final_ds2_locked_raw_stft_65x110",
+  "n_prediction_runs": 40,
+  "n_ds2_beats": 49693,
+  "n_ds2_true_f": 388,
+  "output_files": [
+    "all_split_beat_metadata.csv",
+    "record_class_distribution.csv",
+    "split_class_distribution.csv",
+    "global_metrics_from_predictions.csv",
+    "per_record_runs.csv",
+    "per_record_summary.csv",
+    "f_records_summary.csv",
+    "f_error_destinations.csv",
+    "true_f_beat_consistency.csv",
+    "f_beats_missed_by_all_seeds.csv",
+    "f_error_destinations_overall.png",
+    "f_recall_by_record.png"
+  ],
+  "interpretation_warning": "The analysis diagnoses the already observed DS2 errors. It must not be used to retune, reselect or relabel the final DS2 model."
+}

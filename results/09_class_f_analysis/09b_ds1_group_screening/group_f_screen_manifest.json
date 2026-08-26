@@ -1,0 +1,172 @@
+{
+  "protocol": "DS1 grouped F-record generalization screening",
+  "screening_stage": true,
+  "ds1_only": true,
+  "ds2_npz_loaded": false,
+  "ds2_predictions_loaded": false,
+  "ds2_used_for_selection": false,
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": {
+    "method": "STFT",
+    "image_size": [
+      128,
+      128
+    ],
+    "norm_type": "sqrt",
+    "clip_pct": 5,
+    "nperseg": 64,
+    "window": "hamming",
+    "noverlap_pct": 0.25,
+    "nfft": 64
+  },
+  "architecture": {
+    "candidate_id": "BILSTM2D_T7_BOTH",
+    "model_id": "BILSTM2D",
+    "n_parameters": 318885,
+    "params": {
+      "rr_dim": 32,
+      "head_dim": 128,
+      "dropout": 0.4,
+      "n_layers": 1,
+      "input_projection": 128,
+      "hidden_size": 128,
+      "pooling": "attention",
+      "learning_rate": 0.0023942104033463168,
+      "weight_decay": 1.1605943819949519e-05
+    }
+  },
+  "folds": [
+    {
+      "fold_id": "HOLDOUT_208",
+      "holdout_records": [
+        "208"
+      ]
+    },
+    {
+      "fold_id": "HOLDOUT_223",
+      "holdout_records": [
+        "223"
+      ]
+    },
+    {
+      "fold_id": "HOLDOUT_205",
+      "holdout_records": [
+        "205"
+      ]
+    },
+    {
+      "fold_id": "HOLDOUT_MINOR_F",
+      "holdout_records": [
+        "108",
+        "109",
+        "124",
+        "201",
+        "203",
+        "215",
+        "114"
+      ]
+    }
+  ],
+  "f_record_counts_ds1": {
+    "108": 2,
+    "109": 2,
+    "114": 4,
+    "124": 5,
+    "201": 2,
+    "203": 1,
+    "205": 11,
+    "208": 372,
+    "215": 1,
+    "223": 14
+  },
+  "seeds": [
+    8200,
+    8201,
+    8202,
+    8203,
+    8204
+  ],
+  "fixed_epochs": 15,
+  "early_stopping": false,
+  "configs": [
+    {
+      "config_id": "BASELINE_CE",
+      "family": "baseline",
+      "kind": "ce"
+    },
+    {
+      "config_id": "FOCAL_A025_G3",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.25,
+      "gamma": 3.0
+    },
+    {
+      "config_id": "F_RECORD_BALANCED_CE_P025",
+      "family": "record_balanced",
+      "kind": "record_balanced_ce",
+      "class_weight_power": 0.25
+    },
+    {
+      "config_id": "F_RECORD_BALANCED_FOCAL_A025_G3",
+      "family": "record_balanced",
+      "kind": "record_balanced_focal",
+      "class_weight_power": 0.25,
+      "gamma": 3.0
+    },
+    {
+      "config_id": "WGAN_F_RECORD_BALANCED_X5",
+      "family": "wgan_f_record_balanced",
+      "kind": "wgan_f_record_balanced",
+      "wgan_factor": 5
+    },
+    {
+      "config_id": "WGAN_F_RECORD_BALANCED_X10",
+      "family": "wgan_f_record_balanced",
+      "kind": "wgan_f_record_balanced",
+      "wgan_factor": 10
+    },
+    {
+      "config_id": "WGAN_F_RECORD_BALANCED_X20",
+      "family": "wgan_f_record_balanced",
+      "kind": "wgan_f_record_balanced",
+      "wgan_factor": 20
+    }
+  ],
+  "primary_metric": "RecordMacro_F1_F",
+  "selection_rule": "eligible_for_confirmation first; then max mean RecordMacro_F1_F; tie-break mean RecordMacro_Recall_F; then mean OOF_Macro_F1. WGAN is eligible only if every fold-seed pool passes train-only QA.",
+  "screening_warning": "This ranking selects candidates for a separate DS1 confirmation. It is not a new final DS2 result.",
+  "wgan": {
+    "class": "F only",
+    "record_balanced_real_sampler": true,
+    "record_balanced_candidate_selection": true,
+    "nested_pool_order": "round-robin across nearest training F records",
+    "max_factor": 20,
+    "pool_protocol_version": 2,
+    "nested_factors": [
+      5,
+      10,
+      20
+    ],
+    "epochs": 150,
+    "quality_attempts": 3,
+    "quality_gate_is_diagnostic": true,
+    "failed_quality_policy": "continue with best train-only quality attempt, flag as failed",
+    "rr_assignment": "nearest real F beat from training records"
+  },
+  "expected_runs": 140,
+  "completed_runs": 140,
+  "expected_per_record_runs": 350,
+  "completed_per_record_runs": 350,
+  "complete": true,
+  "source_info": {
+    "train_npz": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_train.npz",
+    "val_npz": "/kaggle/input/datasets/patrykc01/datasetostrrfixed-65x110/mitbih_val.npz",
+    "metadata_csv": "/kaggle/input/datasets/patryk01/workanalysisresults/all_split_beat_metadata.csv"
+  },
+  "elapsed_hours_this_session": 5.923953475356102
+}
