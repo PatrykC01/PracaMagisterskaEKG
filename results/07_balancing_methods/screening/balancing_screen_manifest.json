@@ -1,0 +1,277 @@
+{
+  "protocol": "balancing method screen on full DS1 TRAIN and DS1 VAL",
+  "screen_only": true,
+  "architecture_manifest_source": "/kaggle/input/datasets/patrykcwajnap4trykk/testarchitekturwyniki/architecture_confirmation_11_candidates_65x110/architecture_confirmation_manifest.json",
+  "architecture_manifest_protocol": "paired architecture confirmation on DS1",
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": {
+    "method": "STFT",
+    "image_size": [
+      128,
+      128
+    ],
+    "norm_type": "sqrt",
+    "clip_pct": 5,
+    "nperseg": 64,
+    "window": "hamming",
+    "noverlap_pct": 0.25,
+    "nfft": 64
+  },
+  "representations": [
+    "STFT_2D",
+    "RAW_1D"
+  ],
+  "architectures": {
+    "RAW_1D": {
+      "candidate_id": "BILSTM1D_T24_BOTH",
+      "model_id": "BILSTM1D",
+      "domain": "RAW_1D",
+      "trial_number": 24,
+      "roles": [
+        "balanced_minrare_all_unique",
+        "rare_priority"
+      ],
+      "n_parameters": 328228,
+      "params": {
+        "rr_dim": 32,
+        "head_dim": 128,
+        "dropout": 0.2,
+        "n_layers": 2,
+        "hidden_size": 96,
+        "lstm_dropout": 0.4,
+        "learning_rate": 0.0008375468251188166,
+        "weight_decay": 0.00019431587615520083
+      }
+    },
+    "STFT_2D": {
+      "candidate_id": "BILSTM2D_T7_BOTH",
+      "model_id": "BILSTM2D",
+      "domain": "STFT_2D",
+      "trial_number": 7,
+      "roles": [
+        "balanced_minrare_all_unique",
+        "rare_priority"
+      ],
+      "n_parameters": 318885,
+      "params": {
+        "rr_dim": 32,
+        "head_dim": 128,
+        "dropout": 0.4,
+        "n_layers": 1,
+        "input_projection": 128,
+        "hidden_size": 128,
+        "pooling": "attention",
+        "learning_rate": 0.0023942104033463168,
+        "weight_decay": 1.1605943819949519e-05
+      }
+    }
+  },
+  "screen_seeds": [
+    5000,
+    5001
+  ],
+  "n_method_configs": 20,
+  "method_configs": [
+    {
+      "config_id": "BASELINE_CE",
+      "family": "baseline",
+      "kind": "baseline"
+    },
+    {
+      "config_id": "CLASS_WEIGHT_P025",
+      "family": "class_weight",
+      "kind": "class_weight",
+      "weight_power": 0.25
+    },
+    {
+      "config_id": "CLASS_WEIGHT_P050",
+      "family": "class_weight",
+      "kind": "class_weight",
+      "weight_power": 0.5
+    },
+    {
+      "config_id": "CLASS_WEIGHT_P075",
+      "family": "class_weight",
+      "kind": "class_weight",
+      "weight_power": 0.75
+    },
+    {
+      "config_id": "CLASS_WEIGHT_P100",
+      "family": "class_weight",
+      "kind": "class_weight",
+      "weight_power": 1.0
+    },
+    {
+      "config_id": "FOCAL_A025_G1",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.25,
+      "gamma": 1.0
+    },
+    {
+      "config_id": "FOCAL_A025_G2",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.25,
+      "gamma": 2.0
+    },
+    {
+      "config_id": "FOCAL_A025_G3",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.25,
+      "gamma": 3.0
+    },
+    {
+      "config_id": "FOCAL_A050_G1",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.5,
+      "gamma": 1.0
+    },
+    {
+      "config_id": "FOCAL_A050_G2",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.5,
+      "gamma": 2.0
+    },
+    {
+      "config_id": "FOCAL_A050_G3",
+      "family": "focal",
+      "kind": "focal",
+      "alpha_power": 0.5,
+      "gamma": 3.0
+    },
+    {
+      "config_id": "SAMPLER_P050",
+      "family": "sampler",
+      "kind": "sampler",
+      "sampler_power": 0.5
+    },
+    {
+      "config_id": "SAMPLER_P075",
+      "family": "sampler",
+      "kind": "sampler",
+      "sampler_power": 0.75
+    },
+    {
+      "config_id": "SAMPLER_P100",
+      "family": "sampler",
+      "kind": "sampler",
+      "sampler_power": 1.0
+    },
+    {
+      "config_id": "AUGMENT_X1",
+      "family": "augmentation",
+      "kind": "augmentation",
+      "augment_multiplier": 1
+    },
+    {
+      "config_id": "AUGMENT_X3",
+      "family": "augmentation",
+      "kind": "augmentation",
+      "augment_multiplier": 3
+    },
+    {
+      "config_id": "SMOTE_X3",
+      "family": "smote",
+      "kind": "smote",
+      "smote_factor": 3
+    },
+    {
+      "config_id": "SMOTE_X5",
+      "family": "smote",
+      "kind": "smote",
+      "smote_factor": 5
+    },
+    {
+      "config_id": "WGAN_GP_X3",
+      "family": "wgan_gp",
+      "kind": "wgan_gp",
+      "wgan_factor": 3
+    },
+    {
+      "config_id": "WGAN_GP_X5",
+      "family": "wgan_gp",
+      "kind": "wgan_gp",
+      "wgan_factor": 5
+    }
+  ],
+  "expected_runs": 80,
+  "completed_runs": 80,
+  "complete": true,
+  "uses_full_ds1_train": true,
+  "validation": "full DS1 VAL",
+  "n_epochs": 35,
+  "patience": 10,
+  "checkpoint_selection": [
+    "Min_Rare_F1",
+    "Rare_Macro_SF",
+    "Macro_F1"
+  ],
+  "family_winner_selection": [
+    "Min_Rare_F1 mean",
+    "Rare_Macro_SF mean",
+    "Macro_F1 mean"
+  ],
+  "techniques_are_isolated": true,
+  "combinations_deferred_to_next_stage": true,
+  "augmentation": {
+    "classes": [
+      "S",
+      "F"
+    ],
+    "time_shift_samples": [
+      -5,
+      5
+    ],
+    "gaussian_noise_std": 0.025,
+    "baseline_wander_frequency_hz": [
+      0.5,
+      2.0
+    ],
+    "baseline_wander_amplitude": [
+      0.0,
+      0.035
+    ],
+    "offline_and_deterministic": true
+  },
+  "smote": {
+    "space": "standardized RAW signal concatenated with RR",
+    "train_only": true,
+    "k_neighbors": 5
+  },
+  "wgan_gp": {
+    "space": "standardized RAW signal; the same synthetic pool is used by RAW and STFT",
+    "classes": [
+      "S",
+      "F"
+    ],
+    "class_specific_generators": true,
+    "generator": "1D convolutional WGAN-GP",
+    "epochs": 150,
+    "latent_dim": 128,
+    "critic_steps": 5,
+    "lambda_gp": 10.0,
+    "data_seed": 20260813,
+    "fixed_synthetic_pool_during_screen": true,
+    "generator_variability_deferred_to_confirmation": true,
+    "rr_assignment": "RR of nearest real beat from the same class",
+    "quality_screen": "aligned Euclidean nearest-neighbour distance",
+    "quality_files": [
+      "wgan_gp_quality_summary.csv",
+      "wgan_gp_synthetic_examples.csv",
+      "wgan_gp_synthetic_pool.npz"
+    ],
+    "train_only": true,
+    "combined_with_class_weights": false
+  },
+  "requires_ds2": false,
+  "ds2_used": false,
+  "elapsed_hours_this_session": 0.46142733958032395
+}
