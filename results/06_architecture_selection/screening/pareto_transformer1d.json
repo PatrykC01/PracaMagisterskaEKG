@@ -1,0 +1,170 @@
+[
+  {
+    "model_id": "TRANSFORMER1D",
+    "domain": "RAW_1D",
+    "trial_number": 8,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.2302068709550774,
+    "Macro_F1_mean": 0.44270985910344585,
+    "Min_Rare_F1_mean": 0.0007651109410864575,
+    "F1_N": 0.893310164786814,
+    "F1_S": 0.45964863096906833,
+    "F1_V": 0.41711552971681476,
+    "F1_F": 0.0007651109410864575,
+    "Precision_S": 0.8430941276234896,
+    "Precision_F": 0.0003878975950349108,
+    "Recall_S": 0.3965968586387435,
+    "Recall_F": 0.027777777777777776,
+    "best_epoch_mean": 13.0,
+    "n_parameters": 289860,
+    "params": {
+      "rr_dim": 32,
+      "head_dim": 128,
+      "dropout": 0.6,
+      "model_head_pair": "80x4",
+      "n_layers": 5,
+      "ff_multiplier": 2,
+      "transformer_dropout": 0.1,
+      "learning_rate": 0.0018819437838367003,
+      "weight_decay": 6.315100074632964e-05
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  },
+  {
+    "model_id": "TRANSFORMER1D",
+    "domain": "RAW_1D",
+    "trial_number": 30,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.22986184137832755,
+    "Macro_F1_mean": 0.46737229570132355,
+    "Min_Rare_F1_mean": 0.003079765937788728,
+    "F1_N": 0.862625875682161,
+    "F1_S": 0.45664391681886635,
+    "F1_V": 0.5471396243664782,
+    "F1_F": 0.003079765937788728,
+    "Precision_S": 0.718515037593985,
+    "Precision_F": 0.001548467017652524,
+    "Recall_S": 0.3416230366492147,
+    "Recall_F": 0.2777777777777778,
+    "best_epoch_mean": 12.0,
+    "n_parameters": 436084,
+    "params": {
+      "rr_dim": 32,
+      "head_dim": 64,
+      "dropout": 0.4,
+      "model_head_pair": "112x4",
+      "n_layers": 4,
+      "ff_multiplier": 2,
+      "transformer_dropout": 0.2,
+      "learning_rate": 0.0024973153908871212,
+      "weight_decay": 8.438897212442475e-07
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  },
+  {
+    "model_id": "TRANSFORMER1D",
+    "domain": "RAW_1D",
+    "trial_number": 31,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.24182844802877687,
+    "Macro_F1_mean": 0.44176957144250817,
+    "Min_Rare_F1_mean": 0.0004970178926441351,
+    "F1_N": 0.8618145451673804,
+    "F1_S": 0.4831598781649096,
+    "F1_V": 0.42160684454509834,
+    "F1_F": 0.0004970178926441351,
+    "Precision_S": 0.8101979742173112,
+    "Precision_F": 0.00025075225677031093,
+    "Recall_S": 0.3455497382198953,
+    "Recall_F": 0.027777777777777776,
+    "best_epoch_mean": 7.0,
+    "n_parameters": 367764,
+    "params": {
+      "rr_dim": 16,
+      "head_dim": 128,
+      "dropout": 0.5,
+      "model_head_pair": "96x8",
+      "n_layers": 3,
+      "ff_multiplier": 4,
+      "transformer_dropout": 0.2,
+      "learning_rate": 0.0029070952221652343,
+      "weight_decay": 0.00041070481043383193
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  },
+  {
+    "model_id": "TRANSFORMER1D",
+    "domain": "RAW_1D",
+    "trial_number": 35,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.19192862860159648,
+    "Macro_F1_mean": 0.46999675429651494,
+    "Min_Rare_F1_mean": 0.0,
+    "F1_N": 0.9037582840293013,
+    "F1_S": 0.38385725720319297,
+    "F1_V": 0.5923714759535654,
+    "F1_F": 0.0,
+    "Precision_S": 0.5625936450529578,
+    "Precision_F": 0.0,
+    "Recall_S": 0.31675392670157065,
+    "Recall_F": 0.0,
+    "best_epoch_mean": 8.0,
+    "n_parameters": 254388,
+    "params": {
+      "rr_dim": 16,
+      "head_dim": 64,
+      "dropout": 0.30000000000000004,
+      "model_head_pair": "80x4",
+      "n_layers": 3,
+      "ff_multiplier": 4,
+      "transformer_dropout": 0.0,
+      "learning_rate": 0.0014299399985350596,
+      "weight_decay": 3.346801209871424e-05
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  }
+]

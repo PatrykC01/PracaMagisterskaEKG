@@ -1,0 +1,94 @@
+[
+  {
+    "model_id": "CNN_BILSTM1D",
+    "domain": "RAW_1D",
+    "trial_number": 16,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.17771809294869317,
+    "Macro_F1_mean": 0.425717697726625,
+    "Min_Rare_F1_mean": 0.025423728813559324,
+    "F1_N": 0.9391457761529753,
+    "F1_S": 0.33001245708382704,
+    "F1_V": 0.4082888288561384,
+    "F1_F": 0.025423728813559324,
+    "Precision_S": 0.509400090467036,
+    "Precision_F": 0.013761467889908258,
+    "Recall_S": 0.24869109947643978,
+    "Recall_F": 0.16666666666666666,
+    "best_epoch_mean": 5.0,
+    "n_parameters": 250292,
+    "params": {
+      "rr_dim": 16,
+      "head_dim": 64,
+      "dropout": 0.2,
+      "n_layers": 2,
+      "base_channels": 32,
+      "blocks_per_stage": 1,
+      "kernel_size": 7,
+      "activation": "relu",
+      "hidden_size": 64,
+      "pooling": "mean",
+      "lstm_dropout": 0.4,
+      "learning_rate": 0.0020361252908009035,
+      "weight_decay": 0.00028086221131178084
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  },
+  {
+    "model_id": "CNN_BILSTM1D",
+    "domain": "RAW_1D",
+    "trial_number": 38,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.1717472700419686,
+    "Macro_F1_mean": 0.47851625076884874,
+    "Min_Rare_F1_mean": 0.00955641135358722,
+    "F1_N": 0.9094519593415483,
+    "F1_S": 0.33393812873035,
+    "F1_V": 0.6611185036499094,
+    "F1_F": 0.00955641135358722,
+    "Precision_S": 0.6027777777777777,
+    "Precision_F": 0.004846488717456459,
+    "Recall_S": 0.23298429319371727,
+    "Recall_F": 0.4444444444444444,
+    "best_epoch_mean": 8.0,
+    "n_parameters": 533508,
+    "params": {
+      "rr_dim": 32,
+      "head_dim": 64,
+      "dropout": 0.2,
+      "n_layers": 2,
+      "base_channels": 32,
+      "blocks_per_stage": 1,
+      "kernel_size": 5,
+      "activation": "relu",
+      "hidden_size": 112,
+      "pooling": "mean",
+      "lstm_dropout": 0.2,
+      "learning_rate": 0.001560538027412472,
+      "weight_decay": 6.7443437103342675e-06
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  }
+]

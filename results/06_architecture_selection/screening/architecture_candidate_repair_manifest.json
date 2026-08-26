@@ -1,0 +1,337 @@
+{
+  "protocol": "CNN2D unique-config repair and corrected candidate reselection",
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": {
+    "method": "STFT",
+    "image_size": [
+      128,
+      128
+    ],
+    "norm_type": "sqrt",
+    "clip_pct": 5,
+    "nperseg": 64,
+    "window": "hamming",
+    "noverlap_pct": 0.25,
+    "nfft": 64
+  },
+  "rr_features_used": true,
+  "train_subset_seed": 20260810,
+  "train_class_limits": {
+    "N": 2000,
+    "S": null,
+    "V": 2000,
+    "F": null
+  },
+  "validation": "full DS1 VAL",
+  "models_reselected": [
+    "CNN1D",
+    "BILSTM1D",
+    "TRANSFORMER1D",
+    "CNN2D",
+    "BILSTM2D",
+    "VIT2D",
+    "CNN_BILSTM1D",
+    "CNN_BILSTM2D"
+  ],
+  "models_retrained": [
+    "CNN2D"
+  ],
+  "model_domain": {
+    "CNN1D": "RAW_1D",
+    "BILSTM1D": "RAW_1D",
+    "TRANSFORMER1D": "RAW_1D",
+    "CNN2D": "STFT_2D",
+    "BILSTM2D": "STFT_2D",
+    "VIT2D": "STFT_2D",
+    "CNN_BILSTM1D": "RAW_1D",
+    "CNN_BILSTM2D": "STFT_2D"
+  },
+  "unique_config_target_cnn2d": 20,
+  "max_total_trials_cnn2d": 200,
+  "repair_sampler_seed": 20260812,
+  "screen_seeds": [
+    3000,
+    3001
+  ],
+  "parameter_budget": [
+    250000,
+    550000
+  ],
+  "n_epochs": 25,
+  "patience": 7,
+  "early_stopping_metric": "Macro F1",
+  "optuna_directions": [
+    "maximize Rare_Macro_SF",
+    "maximize Macro_F1"
+  ],
+  "database_selection": {
+    "CNN1D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue/architecture_sweep_1d_2d_stft_65x110/study_cnn1d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_cnn1d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 38
+      }
+    },
+    "BILSTM1D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue/architecture_sweep_1d_2d_stft_65x110/study_bilstm1d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_bilstm1d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 68
+      }
+    },
+    "TRANSFORMER1D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue/architecture_sweep_1d_2d_stft_65x110/study_transformer1d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_transformer1d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 42
+      }
+    },
+    "CNN2D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue2/study_cnn2d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_cnn2d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 16,
+        "n_complete_total": 20,
+        "n_trials_total": 106
+      }
+    },
+    "BILSTM2D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue/architecture_sweep_1d_2d_stft_65x110/study_bilstm2d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_bilstm2d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 45
+      }
+    },
+    "VIT2D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue/architecture_sweep_1d_2d_stft_65x110/study_vit2d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_vit2d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 40
+      }
+    },
+    "CNN_BILSTM1D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue2/study_cnn_bilstm1d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_cnn_bilstm1d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 39
+      }
+    },
+    "CNN_BILSTM2D": {
+      "source": "/kaggle/input/datasets/patrykc01/sweeparchitecturetocontinue2/study_cnn_bilstm2d_multi_v1.db",
+      "destination": "/kaggle/working/architecture_candidate_repair_65x110/study_cnn_bilstm2d_multi_v1.db",
+      "score_before_repair": {
+        "n_unique_complete": 20,
+        "n_complete_total": 20,
+        "n_trials_total": 32
+      }
+    }
+  },
+  "studies_after_repair_and_reselection": {
+    "CNN1D": {
+      "model_id": "CNN1D",
+      "domain": "RAW_1D",
+      "n_trials_total": 38,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        20
+      ],
+      "rare_priority_trial": 20,
+      "rare_priority_rare_macro": 0.13615460884390215,
+      "rare_priority_macro_f1": 0.427397336021063,
+      "rare_priority_minrare": 0.007628489942147732,
+      "balanced_minrare_trial": 33,
+      "balanced_minrare": 0.06391608391608392,
+      "balanced_rare_macro": 0.10858731546231547,
+      "balanced_macro_f1": 0.40791148402813054
+    },
+    "BILSTM1D": {
+      "model_id": "BILSTM1D",
+      "domain": "RAW_1D",
+      "n_trials_total": 68,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        24
+      ],
+      "rare_priority_trial": 24,
+      "rare_priority_rare_macro": 0.30829722976700086,
+      "rare_priority_macro_f1": 0.5963961294453237,
+      "rare_priority_minrare": 0.1308489773045671,
+      "balanced_minrare_trial": 24,
+      "balanced_minrare": 0.1308489773045671,
+      "balanced_rare_macro": 0.30829722976700086,
+      "balanced_macro_f1": 0.5963961294453237
+    },
+    "TRANSFORMER1D": {
+      "model_id": "TRANSFORMER1D",
+      "domain": "RAW_1D",
+      "n_trials_total": 42,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        8,
+        30,
+        31,
+        35
+      ],
+      "rare_priority_trial": 31,
+      "rare_priority_rare_macro": 0.24182844802877687,
+      "rare_priority_macro_f1": 0.44176957144250817,
+      "rare_priority_minrare": 0.0004970178926441351,
+      "balanced_minrare_trial": 30,
+      "balanced_minrare": 0.003079765937788728,
+      "balanced_rare_macro": 0.22986184137832755,
+      "balanced_macro_f1": 0.46737229570132355
+    },
+    "CNN2D": {
+      "model_id": "CNN2D",
+      "domain": "STFT_2D",
+      "n_trials_total": 133,
+      "n_complete_total": 24,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [
+        81,
+        93,
+        99,
+        105
+      ],
+      "pareto_trial_numbers": [
+        19,
+        66
+      ],
+      "rare_priority_trial": 19,
+      "rare_priority_rare_macro": 0.1961779982204177,
+      "rare_priority_macro_f1": 0.38008737826220673,
+      "rare_priority_minrare": 0.11840411840411841,
+      "balanced_minrare_trial": 19,
+      "balanced_minrare": 0.11840411840411841,
+      "balanced_rare_macro": 0.1961779982204177,
+      "balanced_macro_f1": 0.38008737826220673
+    },
+    "BILSTM2D": {
+      "model_id": "BILSTM2D",
+      "domain": "STFT_2D",
+      "n_trials_total": 45,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        0,
+        7,
+        13,
+        18
+      ],
+      "rare_priority_trial": 7,
+      "rare_priority_rare_macro": 0.30639717302418906,
+      "rare_priority_macro_f1": 0.45792073428734303,
+      "rare_priority_minrare": 0.2017921146953405,
+      "balanced_minrare_trial": 7,
+      "balanced_minrare": 0.2017921146953405,
+      "balanced_rare_macro": 0.30639717302418906,
+      "balanced_macro_f1": 0.45792073428734303
+    },
+    "VIT2D": {
+      "model_id": "VIT2D",
+      "domain": "STFT_2D",
+      "n_trials_total": 40,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        0,
+        5,
+        14,
+        16
+      ],
+      "rare_priority_trial": 16,
+      "rare_priority_rare_macro": 0.2490028390090128,
+      "rare_priority_macro_f1": 0.4001109241211357,
+      "rare_priority_minrare": 0.13157894736842105,
+      "balanced_minrare_trial": 16,
+      "balanced_minrare": 0.13157894736842105,
+      "balanced_rare_macro": 0.2490028390090128,
+      "balanced_macro_f1": 0.4001109241211357
+    },
+    "CNN_BILSTM1D": {
+      "model_id": "CNN_BILSTM1D",
+      "domain": "RAW_1D",
+      "n_trials_total": 39,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        16,
+        38
+      ],
+      "rare_priority_trial": 16,
+      "rare_priority_rare_macro": 0.17771809294869317,
+      "rare_priority_macro_f1": 0.425717697726625,
+      "rare_priority_minrare": 0.025423728813559324,
+      "balanced_minrare_trial": 16,
+      "balanced_minrare": 0.025423728813559324,
+      "balanced_rare_macro": 0.17771809294869317,
+      "balanced_macro_f1": 0.425717697726625
+    },
+    "CNN_BILSTM2D": {
+      "model_id": "CNN_BILSTM2D",
+      "domain": "STFT_2D",
+      "n_trials_total": 32,
+      "n_complete_total": 20,
+      "n_unique_complete": 20,
+      "excluded_duplicate_trial_numbers": [],
+      "pareto_trial_numbers": [
+        14,
+        19,
+        29
+      ],
+      "rare_priority_trial": 14,
+      "rare_priority_rare_macro": 0.22439781200692901,
+      "rare_priority_macro_f1": 0.4077206093987735,
+      "rare_priority_minrare": 0.08494208494208494,
+      "balanced_minrare_trial": 13,
+      "balanced_minrare": 0.10344827586206896,
+      "balanced_rare_macro": 0.10357598978288633,
+      "balanced_macro_f1": 0.3977282266483374
+    }
+  },
+  "candidate_rules": {
+    "rare_priority": "max Rare_Macro_SF, tie-break Macro_F1",
+    "balanced_minrare": "max Min_Rare_F1 among all unique COMPLETE, tie-break Rare_Macro_SF then Macro_F1",
+    "duplicate_policy": "keep earliest COMPLETE per exact params signature"
+  },
+  "elapsed_hours_this_session": 0.1422588853041331,
+  "requires_confirmation": true,
+  "confirmation_recommended_seeds": [
+    4000,
+    4001,
+    4002,
+    4003,
+    4004,
+    4005,
+    4006,
+    4007,
+    4008,
+    4009
+  ],
+  "ds2_used": false
+}

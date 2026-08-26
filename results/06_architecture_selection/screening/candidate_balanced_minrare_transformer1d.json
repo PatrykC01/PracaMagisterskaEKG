@@ -1,0 +1,42 @@
+{
+  "model_id": "TRANSFORMER1D",
+  "domain": "RAW_1D",
+  "trial_number": 30,
+  "role": "balanced_minrare_all_unique",
+  "Rare_Macro_SF_mean": 0.22986184137832755,
+  "Macro_F1_mean": 0.46737229570132355,
+  "Min_Rare_F1_mean": 0.003079765937788728,
+  "F1_N": 0.862625875682161,
+  "F1_S": 0.45664391681886635,
+  "F1_V": 0.5471396243664782,
+  "F1_F": 0.003079765937788728,
+  "Precision_S": 0.718515037593985,
+  "Precision_F": 0.001548467017652524,
+  "Recall_S": 0.3416230366492147,
+  "Recall_F": 0.2777777777777778,
+  "best_epoch_mean": 12.0,
+  "n_parameters": 436084,
+  "params": {
+    "rr_dim": 32,
+    "head_dim": 64,
+    "dropout": 0.4,
+    "model_head_pair": "112x4",
+    "n_layers": 4,
+    "ff_multiplier": 2,
+    "transformer_dropout": 0.2,
+    "learning_rate": 0.0024973153908871212,
+    "weight_decay": 8.438897212442475e-07
+  },
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": null,
+  "screen_seeds": [
+    3000,
+    3001
+  ],
+  "requires_confirmation": true,
+  "ds2_used": false
+}

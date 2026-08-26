@@ -1,0 +1,45 @@
+[
+  {
+    "model_id": "CNN1D",
+    "domain": "RAW_1D",
+    "trial_number": 20,
+    "role": "pareto_unique",
+    "Rare_Macro_SF_mean": 0.13615460884390215,
+    "Macro_F1_mean": 0.427397336021063,
+    "Min_Rare_F1_mean": 0.007628489942147732,
+    "F1_N": 0.8976097876002136,
+    "F1_S": 0.2646807277456566,
+    "F1_V": 0.5396703387962342,
+    "F1_F": 0.007628489942147732,
+    "Precision_S": 0.4855555555555556,
+    "Precision_F": 0.003945066210142203,
+    "Recall_S": 0.18324607329842932,
+    "Recall_F": 0.2222222222222222,
+    "best_epoch_mean": 12.0,
+    "n_parameters": 536836,
+    "params": {
+      "rr_dim": 32,
+      "head_dim": 64,
+      "dropout": 0.4,
+      "base_channels": 32,
+      "blocks_per_stage": 1,
+      "kernel_size": 11,
+      "pool_bins": 6,
+      "activation": "relu",
+      "learning_rate": 0.0020196886351998337,
+      "weight_decay": 0.00035010900261180485
+    },
+    "raw_window": {
+      "before": 65,
+      "after": 110,
+      "length": 175
+    },
+    "stft_config": null,
+    "screen_seeds": [
+      3000,
+      3001
+    ],
+    "requires_confirmation": true,
+    "ds2_used": false
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "model_id": "CNN_BILSTM2D",
+  "domain": "STFT_2D",
+  "trial_number": 14,
+  "role": "rare_priority",
+  "Rare_Macro_SF_mean": 0.22439781200692901,
+  "Macro_F1_mean": 0.4077206093987735,
+  "Min_Rare_F1_mean": 0.08494208494208494,
+  "F1_N": 0.9008674130456087,
+  "F1_S": 0.3638535390717731,
+  "F1_V": 0.2812194005356274,
+  "F1_F": 0.08494208494208494,
+  "Precision_S": 0.5444286053694465,
+  "Precision_F": 0.1076923076923077,
+  "Recall_S": 0.27356020942408377,
+  "Recall_F": 0.1111111111111111,
+  "best_epoch_mean": 5.0,
+  "n_parameters": 290004,
+  "params": {
+    "rr_dim": 32,
+    "head_dim": 64,
+    "dropout": 0.2,
+    "n_layers": 2,
+    "base_channels": 16,
+    "blocks_per_stage": 2,
+    "kernel_size": 5,
+    "activation": "gelu",
+    "hidden_size": 64,
+    "pooling": "mean",
+    "lstm_dropout": 0.30000000000000004,
+    "learning_rate": 0.0008213723823045083,
+    "weight_decay": 1.4940938661398852e-05
+  },
+  "raw_window": {
+    "before": 65,
+    "after": 110,
+    "length": 175
+  },
+  "stft_config": {
+    "method": "STFT",
+    "image_size": [
+      128,
+      128
+    ],
+    "norm_type": "sqrt",
+    "clip_pct": 5,
+    "nperseg": 64,
+    "window": "hamming",
+    "noverlap_pct": 0.25,
+    "nfft": 64
+  },
+  "screen_seeds": [
+    3000,
+    3001
+  ],
+  "requires_confirmation": true,
+  "ds2_used": false
+}
