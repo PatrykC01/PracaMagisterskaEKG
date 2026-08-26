@@ -1,0 +1,71 @@
+{
+  "fs": 360,
+  "window_before": 65,
+  "window_after": 110,
+  "segment_length": 175,
+  "filter": {
+    "type": "Butterworth band-pass",
+    "order": 3,
+    "lowcut_hz": 0.5,
+    "highcut_hz": 45.0,
+    "zero_phase": true
+  },
+  "normalization": "per-segment z-score",
+  "rr_features": [
+    "pre_rr",
+    "post_rr",
+    "local_mean_10",
+    "rr_ratio"
+  ],
+  "train_records": [
+    "101",
+    "106",
+    "108",
+    "109",
+    "112",
+    "115",
+    "116",
+    "119",
+    "124",
+    "201",
+    "203",
+    "205",
+    "208",
+    "209",
+    "215",
+    "230"
+  ],
+  "val_records": [
+    "114",
+    "118",
+    "122",
+    "207",
+    "220",
+    "223"
+  ],
+  "test_records": [
+    "100",
+    "103",
+    "105",
+    "111",
+    "113",
+    "117",
+    "121",
+    "123",
+    "200",
+    "202",
+    "210",
+    "212",
+    "213",
+    "214",
+    "219",
+    "221",
+    "222",
+    "228",
+    "231",
+    "232",
+    "233",
+    "234"
+  ],
+  "warning": "DS2 must not be used for tuning"
+}
